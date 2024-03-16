@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "854862749340",
+    "project_id": "webdrive-9a5ec",
+    "storage_bucket": "webdrive-9a5ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854862749340:android:40e7146ad41cd198431759",
+        "android_client_info": {
+          "package_name": "com.example.webdrive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGvaHieaZZd_DT4kjvu-0uJfE7UPyIPQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
