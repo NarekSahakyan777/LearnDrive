@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class SettingsActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     protected Button button;
-    public TextView textView;
+    public TextView GotoProfile;
     private MaterialButton changePasswordButton;
     private MaterialButton deleteAccountButton;
     private FirebaseUser user;
@@ -27,7 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
         button = findViewById(R.id.logout);
         changePasswordButton = findViewById(R.id.changePassword);
         deleteAccountButton = findViewById(R.id.deleteAccount);
-
+        GotoProfile = findViewById(R.id.textView);
 //        auth = FirebaseAuth.getInstance();
 //        button = findViewById(R.id.logout);
 //        user = auth.getCurrentUser();
@@ -54,6 +54,14 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
                 SettingsActivity.this.finish();
 
+            }
+        });
+        GotoProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to ProfileActivity
+                Intent intent = new Intent(SettingsActivity.this, Profile.class);
+                startActivity(intent);
             }
         });
 

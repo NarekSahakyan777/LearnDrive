@@ -90,6 +90,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginTop="84dp"
             android:text="Lessons"
+            android:backgroundTint="@color/skyblue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_weight="1"/>
@@ -100,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Road signs"
+            android:backgroundTint="@color/skyblue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button2"
             app:layout_constraintVertical_weight="1"/>
@@ -110,6 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="the rules of driving"
+            android:backgroundTint="@color/skyblue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button3"
             app:layout_constraintVertical_weight="1"/>
@@ -120,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="examination"
+            android:backgroundTint="@color/skyblue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button4"
             app:layout_constraintVertical_weight="1"/>
