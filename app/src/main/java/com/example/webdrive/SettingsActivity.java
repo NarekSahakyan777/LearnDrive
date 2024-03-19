@@ -59,7 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
         GotoProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to ProfileActivity
+
                 Intent intent = new Intent(SettingsActivity.this, Profile.class);
                 startActivity(intent);
             }
