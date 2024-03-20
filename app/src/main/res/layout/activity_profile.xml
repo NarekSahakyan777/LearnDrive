@@ -106,16 +106,7 @@
             app:layout_constraintTop_toBottomOf="@id/button2"
             app:layout_constraintVertical_weight="1"/>
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="the rules of driving"
-            android:backgroundTint="@color/skyblue"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button3"
-            app:layout_constraintVertical_weight="1"/>
+
 
         <Button
             android:id="@+id/button5"
@@ -125,7 +116,7 @@
             android:text="examination"
             android:backgroundTint="@color/skyblue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button4"
+            app:layout_constraintTop_toBottomOf="@id/button3"
             app:layout_constraintVertical_weight="1"/>
 
 

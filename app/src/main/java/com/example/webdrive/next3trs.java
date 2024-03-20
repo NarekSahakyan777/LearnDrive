@@ -8,18 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class next2trs extends AppCompatActivity {
-protected Button toNext;
+public class next3trs extends AppCompatActivity {
+    protected Button toNextLast;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_next2trs);
-        toNext = findViewById(R.id.nexTo2);
-        toNext.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_next3trs);
+        toNextLast = findViewById(R.id.nexTo3);
+        toNextLast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(next2trs.this, next3trs.class);
+                Intent in = new Intent(next3trs.this, next4trs.class);
                 startActivity(in);
             }
         });

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context=".next2trs">
+    tools:context=".next4trs">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,8 +43,8 @@
             android:layout_height="98dp"
             android:layout_marginStart="36dp"
 
-            android:layout_marginTop="68dp"
-            android:src="@drawable/trs21"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/trs41"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,21 +52,21 @@
             android:id="@+id/imageView2"
             android:layout_width="109dp"
             android:layout_height="99dp"
-            android:layout_marginStart="36dp"
+            android:layout_marginStart="40dp"
 
-            android:layout_marginTop="184dp"
-            android:src="@drawable/trs22"
+            android:layout_marginTop="208dp"
+            android:src="@drawable/trs42"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="117dp"
-            android:layout_height="98dp"
-            android:layout_marginStart="36dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="32dp"
 
-            android:layout_marginTop="300dp"
-            android:src="@drawable/trs23"
+            android:layout_marginTop="328dp"
+            android:src="@drawable/trs43"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -76,19 +76,8 @@
             android:layout_height="98dp"
             android:layout_marginStart="36dp"
 
-            android:layout_marginTop="408dp"
-            android:src="@drawable/trs24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="117dp"
-            android:layout_height="98dp"
-            android:layout_marginStart="36dp"
-
-            android:layout_marginTop="520dp"
-            android:src="@drawable/trs25"
+            android:layout_marginTop="448dp"
+            android:src="@drawable/trs44"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,10 +86,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="55dp"
-        android:paddingTop="29dp"
-        android:text="Advantages and Forbidding signs"
-        android:textSize="20dp"
+        android:paddingLeft="50dp"
+        android:paddingTop="30dp"
+        android:text="Info, Service and additional info signs"
+        android:textSize="18dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="31dp">
 
@@ -118,8 +107,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
-            android:text="Main road"
+            android:layout_marginTop="120dp"
+            android:text="Place of return. Left turns are prohibited"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -127,8 +116,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="184dp"
-            android:text="Intersection with secondary road"
+            android:layout_marginTop="256dp"
+            android:text="Parking"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -136,37 +125,29 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="336dp"
-            android:text="Entry is denied"
+            android:layout_marginTop="368dp"
+            android:text="Hospital"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="428dp"
-            android:text="Maximum speed limit"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="544dp"
-            android:text="Stopping is prohibited"
+            android:layout_marginTop="476dp"
+            android:text="Distance to object"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/nexTo2"
-            android:layout_width="112dp"
-            android:layout_height="57dp"
-            android:layout_marginTop="636dp"
+            android:id="@+id/goToRoadSignsActivity"
+            android:layout_width="152dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="608dp"
             android:layout_marginEnd="4dp"
-            android:text="Next"
+            android:text="Road Signs"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

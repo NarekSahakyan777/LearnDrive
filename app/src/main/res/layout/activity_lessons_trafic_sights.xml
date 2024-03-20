@@ -97,9 +97,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="55dp"
+        android:paddingLeft="120dp"
         android:paddingTop="29dp"
-        android:text="These are the Warning signs"
+        android:text="Warning signs"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="31dp">
