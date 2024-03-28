@@ -56,7 +56,6 @@
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/black" />
-
             <EditText
                 android:id="@+id/confirm_password"
                 android:layout_width="match_parent"
