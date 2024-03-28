@@ -67,7 +67,6 @@ public class Profile extends Activity {
                 startActivity(intent);
             }
         });
-
         profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,9 +96,7 @@ public class Profile extends Activity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             profileImageView.setImageURI(imageUri);
-
             saveImageToLocalStorage(imageUri);
-
           //  uploadImageToFirebase();
         }
     }
@@ -107,28 +104,20 @@ public class Profile extends Activity {
     protected void saveImageToLocalStorage(Uri imageUri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(imageUri);
-
             File file = new File(getFilesDir(), "profile_image.jpg");
             FileOutputStream outputStream = new FileOutputStream(file);
             FileChannel source = ((FileInputStream) inputStream).getChannel();
             FileChannel destination = outputStream.getChannel();
-
             destination.transferFrom(source, 0, source.size());
-
             source.close();
             destination.close();
             inputStream.close();
             outputStream.close();
-
             Toast.makeText(this, "Image saved locally", Toast.LENGTH_SHORT).show();
-
-            // Log success message
             Log.d("SaveImage", "Image saved successfully to internal storage");
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(this, "Failed to save image locally", Toast.LENGTH_SHORT).show();
-
-            // Log error message
             Log.e("SaveImage", "Failed to save image to internal storage: " + e.getMessage());
         }
     }
