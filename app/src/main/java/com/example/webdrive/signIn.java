@@ -6,9 +6,11 @@ package com.example.webdrive;
     import android.annotation.SuppressLint;
     import android.content.Intent;
     import android.os.Bundle;
+    import android.text.InputType;
     import android.view.View;
     import android.widget.Button;
     import android.widget.EditText;
+    import android.widget.ImageButton;
     import android.widget.TextView;
     import android.widget.Toast;
 
@@ -29,7 +31,8 @@ package com.example.webdrive;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_sign_in);
-
+            ImageButton passwordToggle = findViewById(R.id.password_toggle);
+            ImageButton confirmPasswordToggle = findViewById(R.id.confirm_password_toggle);
             auth = FirebaseAuth.getInstance();
             signInEmail = findViewById(R.id.signin_email);
             signInPassword = findViewById(R.id.signin_password);
@@ -85,6 +88,34 @@ package com.example.webdrive;
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(signIn.this, logIn.class));
+                }
+            });
+            passwordToggle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (signInPassword.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                        signInPassword.setInputType(InputType.TYPE_CLASS_TEXT |
+                                InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        passwordToggle.setImageResource(R.drawable.ic_seepsw);
+                    } else {
+                        signInPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                        passwordToggle.setImageResource(R.drawable.ic_seepsw);
+                    }
+                    signInPassword.setSelection(signInPassword.getText().length());
+                }
+            });
+            confirmPasswordToggle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (confirmPassword.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
+                        confirmPassword.setInputType(InputType.TYPE_CLASS_TEXT |
+                                InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        confirmPasswordToggle.setImageResource(R.drawable.ic_seepsw);
+                    } else {
+                        confirmPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                        confirmPasswordToggle.setImageResource(R.drawable.ic_seepsw);
+                    }
+                    confirmPassword.setSelection(confirmPassword.getText().length());
                 }
             });
         }

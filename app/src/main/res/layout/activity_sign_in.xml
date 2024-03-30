@@ -43,35 +43,61 @@
                 android:hint="Email"
                 android:padding="8dp"
                 android:textColor="@color/black" />
-
-            <EditText
-                android:id="@+id/signin_password"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
-                android:drawableLeft="@drawable/lock"
-                android:drawablePadding="8dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                android:textColor="@color/black" />
-            <EditText
-                android:id="@+id/confirm_password"
+                <EditText
+                    android:id="@+id/signin_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_toStartOf="@+id/password_toggle"
+                    android:drawableLeft="@drawable/lock"
+                    android:drawablePadding="8dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
+                <ImageButton
+                    android:id="@+id/password_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_seepsw"
+                    android:padding="12dp"
+                    android:contentDescription="Toggle Password Visibility" />
+            </RelativeLayout>
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
-                android:drawableLeft="@drawable/lock"
-                android:drawablePadding="8dp"
-                android:hint="Confirm Password"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_toStartOf="@+id/confirm_password_toggle"
+                    android:drawableLeft="@drawable/lock"
+                    android:drawablePadding="8dp"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
 
-
-
-
+                <ImageButton
+                    android:id="@+id/confirm_password_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_seepsw"
+                    android:contentDescription="Toggle Confirm Password Visibility" />
+            </RelativeLayout>
             <Button
                 android:id="@+id/signin_button"
                 android:layout_width="match_parent"
@@ -93,9 +119,6 @@
                 android:text="Already have an account? Log In!"
 
                 android:textSize="13.5sp" />
-
-
-
 
 
         </LinearLayout>
