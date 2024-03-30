@@ -97,20 +97,19 @@ public class Profile extends Activity {
             imageUri = data.getData();
             profileImageView.setImageURI(imageUri);
             saveImageToLocalStorage(imageUri);
-          //  uploadImageToFirebase();
+             uploadImageToFirebase();
         }
     }
-
     protected void saveImageToLocalStorage(Uri imageUri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(imageUri);
             File file = new File(getFilesDir(), "profile_image.jpg");
             FileOutputStream outputStream = new FileOutputStream(file);
-            FileChannel source = ((FileInputStream) inputStream).getChannel();
-            FileChannel destination = outputStream.getChannel();
-            destination.transferFrom(source, 0, source.size());
-            source.close();
-            destination.close();
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
             inputStream.close();
             outputStream.close();
             Toast.makeText(this, "Image saved locally", Toast.LENGTH_SHORT).show();
@@ -121,42 +120,42 @@ public class Profile extends Activity {
             Log.e("SaveImage", "Failed to save image to internal storage: " + e.getMessage());
         }
     }
+    private void uploadImageToFirebase() {
+        if (imageUri != null && isFirebaseSetupValid()) {
+            StorageReference imageRef = storageReference.child("profile_image.jpg");
 
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(imageUri);
+                byte[] buffer = new byte[inputStream.available()];
+                inputStream.read(buffer);
+                inputStream.close();
 
-//    private void uploadImageToFirebase() {
-//        if (imageUri != null && isFirebaseSetupValid()) {
-//            StorageReference imageRef = storageReference.child("profile_image.jpg");
-//
-//            try {
-//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-//                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-//                byte[] imageData = baos.toByteArray();
-//                imageRef.putBytes(imageData)
-//                        .addOnSuccessListener(taskSnapshot -> {
-//                            imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
-//                                String imageUrl = uri.toString();
-//                                databaseReference.child("profile_picture_url").setValue(imageUrl)
-//                                        .addOnSuccessListener(aVoid -> {
-//                                            Toast.makeText(Profile.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
-//                                        })
-//                                        .addOnFailureListener(e -> {
-//                                            Toast.makeText(Profile.this, "Failed to update profile picture URL", Toast.LENGTH_SHORT).show();
-//                                        });
-//                            });
-//                        })
-//                        .addOnFailureListener(e -> {
-//                            Toast.makeText(Profile.this, "Failed to upload image", Toast.LENGTH_SHORT).show();
-//                        });
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                Toast.makeText(Profile.this, "Error processing image", Toast.LENGTH_SHORT).show();
-//            }
-//        } else {
-//            Toast.makeText(Profile.this, "Invalid image or Firebase setup", Toast.LENGTH_SHORT).show();
-//        }
-//    }
-//    private boolean isFirebaseSetupValid() {
-//        return storageReference != null && databaseReference != null;
-//    }
+                imageRef.putBytes(buffer)
+                        .addOnSuccessListener(taskSnapshot -> {
+                            imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                                String imageUrl = uri.toString();
+                                databaseReference.child("profile_picture_url").setValue(imageUrl)
+                                        .addOnSuccessListener(aVoid -> {
+                                            Toast.makeText(Profile.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
+                                        })
+                                        .addOnFailureListener(e -> {
+                                            Toast.makeText(Profile.this, "Failed to update profile picture URL", Toast.LENGTH_SHORT).show();
+                                        });
+                            });
+                        })
+                        .addOnFailureListener(e -> {
+                            Toast.makeText(Profile.this, "Failed to upload image", Toast.LENGTH_SHORT).show();
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(Profile.this, "Error processing image", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(Profile.this, "Invalid image or Firebase setup", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean isFirebaseSetupValid() {
+        return storageReference != null && databaseReference != null;
+    }
 }

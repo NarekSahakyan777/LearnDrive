@@ -11,14 +11,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class RoadSignsActivity extends AppCompatActivity {
-    String[] question_list = {"5 * 5", "6 * 5", "7 * 5", "8 * 5",};
-    String[] choose_list = {"10", "20", "25", "50",
-            "50", "40", "20", "30",
-            "25", "30", "40", "35",
+    String[] question_list = {"Driving license is granted",
+            "How much will you be fined for driving without a license?",
+            "The number of vehicles on the roads of the Republic of Armenia is defined",
+            "8 * 5",};
+    String[] choose_list = {"18 years old", "20 years old", "16 years old", "17 years old ",
+            "30000", "40000", "25000", "20000",
+            "left-hand traffic", "right-hand traffic", "Two of them", "Non of them",
             "40", "5", "50", "80"
 
     };
-    String[] correct_list = {"25", "30", "35", "40"};
+    String[] correct_list = {"18 years old", "20000", "right-hand traffic", "40"};
     TextView cpt_question, text_question;
     Button btn_choose1, btn_choose2, btn_choose3, btn_choose4, btn_next;
     int currentQuestion = 0;
