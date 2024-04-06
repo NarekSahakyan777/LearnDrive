@@ -18,7 +18,7 @@ public class RoadSignsActivity extends AppCompatActivity {
     String[] choose_list = {"18 years old", "20 years old", "16 years old", "17 years old ",
             "30000", "40000", "25000", "20000",
             "left-hand traffic", "right-hand traffic", "Two of them", "Non of them",
-            "40", "5", "50", "80"
+            "40", "58", "50", "80"
 
     };
     String[] correct_list = {"18 years old", "20000", "right-hand traffic", "40"};
