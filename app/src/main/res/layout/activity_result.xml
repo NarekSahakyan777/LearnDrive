@@ -36,7 +36,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/correctTextView"
+                android:id="@+id/textViewCorrect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Correct: "
@@ -46,12 +46,12 @@
                 android:layout_marginBottom="8dp" />
 
             <TextView
-                android:id="@+id/incorrectTextView"
+                android:id="@+id/textViewIncorrect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Incorrect: "
                 android:textSize="18sp"
-                android:layout_below="@id/correctTextView"
+                android:layout_below="@id/textViewCorrect"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="8dp" />
         </RelativeLayout>

@@ -26,6 +26,9 @@ public class RoadSignsActivity extends AppCompatActivity {
     Button btn_choose1, btn_choose2, btn_choose3, btn_choose4, btn_next;
     int currentQuestion = 0;
     boolean isclickBtn = false;
+    int correctCount = 0;
+
+    int incorrectCount = 0;
     String valueChoose = "";
     Button btn_click;
 
@@ -45,42 +48,40 @@ public class RoadSignsActivity extends AppCompatActivity {
                 a-> finish()
         );
         remplirData();
-        btn_next.setOnClickListener(
-                v -> {
-                    if (isclickBtn) {
-                        isclickBtn = false;
-                        if (!valueChoose.equals(correct_list[currentQuestion])) {
-                            Toast.makeText(RoadSignsActivity.this, "error", Toast.LENGTH_SHORT).show();
-                            btn_click.setBackgroundResource(R.drawable.background_btn_error);
-                        } else {
-                            Toast.makeText(RoadSignsActivity.this, "correct", Toast.LENGTH_SHORT).show();
-                            btn_click.setBackgroundResource(R.drawable.background_btn_correct);
-                        }
-                        new Handler().postDelayed(() -> {
-                            if(currentQuestion != question_list.length - 1){
-                                currentQuestion = currentQuestion + 1;
-                                remplirData();
-                                valueChoose = "";
-                                btn_choose1.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                                btn_choose2.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                                btn_choose3.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                                btn_choose4.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                            }else{
-                                Intent intent = new Intent(RoadSignsActivity.this, ResultActivity.class);
-                                startActivity(intent);
-                            }
-
-                        }, 2000);
-
-
-                    }else{
-                        Toast.makeText(RoadSignsActivity.this, "You have to choose one", Toast.LENGTH_LONG).show();
-                    }
+        btn_next.setOnClickListener(v -> {
+            if (isclickBtn) {
+                isclickBtn = false;
+                if (!valueChoose.equals(correct_list[currentQuestion])) {
+                    Toast.makeText(RoadSignsActivity.this, "error", Toast.LENGTH_SHORT).show();
+                    btn_click.setBackgroundResource(R.drawable.background_btn_error);
+                    incorrectCount++;
+                } else {
+                    Toast.makeText(RoadSignsActivity.this, "correct", Toast.LENGTH_SHORT).show();
+                    btn_click.setBackgroundResource(R.drawable.background_btn_correct);
+                    correctCount++;
                 }
-        );
-
-
+                new Handler().postDelayed(() -> {
+                    if (currentQuestion != question_list.length - 1) {
+                        currentQuestion = currentQuestion + 1;
+                        remplirData();
+                        valueChoose = "";
+                        btn_choose1.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
+                        btn_choose2.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
+                        btn_choose3.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
+                        btn_choose4.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
+                    } else {
+                        Intent intent = new Intent(RoadSignsActivity.this, ResultActivity.class);
+                        intent.putExtra("correctCount", correctCount);
+                        intent.putExtra("incorrectCount", incorrectCount);
+                        startActivity(intent);
+                    }
+                }, 2000);
+            } else {
+                Toast.makeText(RoadSignsActivity.this, "You have to choose one", Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
 
     void remplirData() {
         cpt_question.setText((currentQuestion + 1) + "/" + question_list.length);
