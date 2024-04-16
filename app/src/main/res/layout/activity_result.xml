@@ -36,30 +36,21 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewCorrect"
+                android:id="@+id/score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Correct: "
+                android:text="Result: "
                 android:textSize="20sp"
                 android:layout_below="@id/resultTitleTextView"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="8dp" />
 
             <TextView
-                android:id="@+id/textViewIncorrect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Incorrect: "
-                android:textSize="20sp"
-                android:layout_below="@id/textViewCorrect"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="8dp" />
-            <TextView
                 android:id="@+id/backTo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Go to Profile"
-                android:layout_below="@id/textViewIncorrect"
+                android:layout_below="@id/score"
                 android:textSize="16sp"
                 android:layout_centerHorizontal="true">
 

@@ -14,14 +14,15 @@ public class RoadSignsActivity extends AppCompatActivity {
     String[] question_list = {"Driving license is granted",
             "How much will you be fined for driving without a license?",
             "The number of vehicles on the roads of the Republic of Armenia is defined",
-            "8 * 5",};
+            "Can you drive when drink?",
+            "Can driver disboy a red light?"};
     String[] choose_list = {"18 years old", "20 years old", "16 years old", "17 years old ",
             "30000", "40000", "25000", "20000",
             "left-hand traffic", "right-hand traffic", "Two of them", "Non of them",
-            "40", "58", "50", "80"
-
+            "Yes", "Never", "if you want", "All of them",
+            "Yes" ,"Sometimes","Never","If driver want"
     };
-    String[] correct_list = {"18 years old", "20000", "right-hand traffic", "40"};
+    String[] correct_list = {"18 years old", "20000", "right-hand traffic", "Never","Never"};
     TextView cpt_question, text_question;
     Button btn_choose1, btn_choose2, btn_choose3, btn_choose4, btn_next;
     int currentQuestion = 0;
@@ -71,8 +72,7 @@ public class RoadSignsActivity extends AppCompatActivity {
                         btn_choose4.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
                     } else {
                         Intent intent = new Intent(RoadSignsActivity.this, ResultActivity.class);
-                        intent.putExtra("correctCount", correctCount);
-                        intent.putExtra("incorrectCount", incorrectCount);
+                        intent.putExtra("Result", correctCount);
                         startActivity(intent);
                     }
                 }, 2000);
