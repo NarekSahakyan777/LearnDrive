@@ -45,6 +45,7 @@ public class Profile extends Activity {
         setContentView(R.layout.activity_profile);
         Button lessonsButton = findViewById(R.id.button2);
         Button roadSignsButton = findViewById(R.id.button3);
+        Button rulesButton = findViewById(R.id.button4);
         ImageButton settings = findViewById(R.id.settings);
         tabLayout = findViewById(R.id.tab_layout);
         profileImageView = findViewById(R.id.blank_profile);
@@ -65,6 +66,13 @@ public class Profile extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(Profile.this, RoadSignsActivity.class);
                 startActivity(intent);
+            }
+        });
+        rulesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Profile.this, RulesActivity.class);
+                startActivity(in);
             }
         });
         profileImageView.setOnClickListener(new View.OnClickListener() {

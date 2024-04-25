@@ -106,6 +106,16 @@
             app:layout_constraintTop_toBottomOf="@id/button2"
             app:layout_constraintVertical_weight="1"/>
 
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:backgroundTint="@color/skyblue"
+            android:text="Rules of driving"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button2"
+            app:layout_constraintVertical_weight="1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
