@@ -1,5 +1,6 @@
 package com.example.webdrive;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -38,7 +39,7 @@ public class Profile extends Activity {
     public TabLayout tabLayout ;
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class Profile extends Activity {
         Button lessonsButton = findViewById(R.id.button2);
         Button roadSignsButton = findViewById(R.id.button3);
         Button rulesButton = findViewById(R.id.button4);
+        Button rulesQuiz = findViewById(R.id.button5);
         ImageButton settings = findViewById(R.id.settings);
         tabLayout = findViewById(R.id.tab_layout);
         profileImageView = findViewById(R.id.blank_profile);
@@ -60,7 +62,13 @@ public class Profile extends Activity {
                 startActivity(intent);
             }
         });
-
+        rulesQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, RulesQuizActivity.class);
+                startActivity(intent);
+            }
+        });
         roadSignsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
