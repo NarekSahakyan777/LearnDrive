@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class RoadSignsActivity extends AppCompatActivity {
             "Yes" ,"Sometimes","Never","If driver want"
     };
     String[] correct_list = {"18 years old", "20000", "right-hand traffic", "Never","Never"};
+    int[] image_list = {R.drawable.trs2, R.drawable.trs21, R.drawable.trs22, R.drawable.trs23, R.drawable.trs25};
     TextView cpt_question, text_question;
     Button btn_choose1, btn_choose2, btn_choose3, btn_choose4, btn_next;
     int currentQuestion = 0;
@@ -32,7 +34,7 @@ public class RoadSignsActivity extends AppCompatActivity {
     int incorrectCount = 0;
     String valueChoose = "";
     Button btn_click;
-
+    ImageView questionImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +46,7 @@ public class RoadSignsActivity extends AppCompatActivity {
         btn_choose3 = findViewById(R.id.btn_choose3);
         btn_choose4 = findViewById(R.id.btn_choose4);
         btn_next = findViewById(R.id.btn_next);
-
+        questionImage = findViewById(R.id.question_image);
         findViewById(R.id.image_back).setOnClickListener(
                 a-> finish()
         );
@@ -86,6 +88,7 @@ public class RoadSignsActivity extends AppCompatActivity {
     void remplirData() {
         cpt_question.setText((currentQuestion + 1) + "/" + question_list.length);
         text_question.setText(question_list[currentQuestion]);
+        questionImage.setImageResource(image_list[currentQuestion]);
         btn_choose1.setText(choose_list[4 * currentQuestion]);
         btn_choose2.setText(choose_list[4 * currentQuestion + 1]);
         btn_choose3.setText(choose_list[4 * currentQuestion + 2]);

@@ -56,11 +56,11 @@ public class RulesQuizActivity extends AppCompatActivity {
                 isclickBtn = false;
                 if (!valueChoose.equals(correct_list[currentQuestion])) {
                     Toast.makeText(RulesQuizActivity.this, "error", Toast.LENGTH_SHORT).show();
-                    btn_click.setBackgroundResource(R.drawable.background_btn_error);
+                    btn_click.setBackgroundResource(R.color.red);
                     incorrectCount++;
                 } else {
                     Toast.makeText(RulesQuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
-                    btn_click.setBackgroundResource(R.drawable.background_btn_correct);
+                    btn_click.setBackgroundResource(R.color.green);
                     correctCount++;
                 }
                 new Handler().postDelayed(() -> {
