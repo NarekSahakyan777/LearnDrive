@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/second_color"
     tools:context=".RoadSignsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,7 +61,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:gravity="center"
-            android:text="Question"
+            android:text="What sign is this?"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -73,14 +74,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/submit"
         android:layout_width="126dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="28dp"
         android:backgroundTint="@color/primary_color"
         android:padding="12sp"
-        android:text="Next"
+        android:text="Submit"
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -92,54 +93,57 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        android:backgroundTint="@color/primary_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <Button
-            android:id="@+id/btn_choose1"
+            android:id="@+id/ans_A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:backgroundTint="@color/white"
-            android:background="@drawable/background_btn_choose_diasbaled"
-            android:onClick="ClickChoose"
-            android:text="Button"
+            android:text="ans C"
+            android:padding="11dp"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/btn_choose2"
+            android:id="@+id/ans_B"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/background_btn_choose_diasbaled"
-            android:onClick="ClickChoose"
-            android:text="Button"
+            android:backgroundTint="@color/white"
+            android:text="ans C"
+            android:padding="11dp"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <Button
-            android:id="@+id/btn_choose3"
+            android:id="@+id/ans_C"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/background_btn_choose_diasbaled"
-            android:onClick="ClickChoose"
-            android:text="Button"
+            android:backgroundTint="@color/white"
+            android:text="ans C"
+            android:padding="11dp"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_choose4"
+            android:id="@+id/ans_D"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@drawable/background_btn_choose_diasbaled"
-            android:onClick="ClickChoose"
-            android:text="Button"
+            android:backgroundTint="@color/white"
+            android:text="ans C"
+            android:padding="11dp"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="20sp"
+            android:textStyle="bold"  />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

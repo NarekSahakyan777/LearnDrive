@@ -56,43 +56,17 @@
         android:background="@drawable/rounded_corner2"
         android:padding="25dp">
 
-        <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tab_layout"
-            app:tabGravity="fill"
-            app:tabMode="fixed"
-            android:background="#FFFFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Choose"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="24dp" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Game Active" />
-
-
-
-        </com.google.android.material.tabs.TabLayout>
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="84dp"
-            android:text="Lessons Road signs"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@color/skyblue"
+            android:text="Lessons Road signs"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1"/>
+            app:layout_constraintVertical_weight="1" />
 
         <Button
             android:id="@+id/button3"
@@ -111,22 +85,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:backgroundTint="@color/skyblue"
-            android:text="Lessons of Rules"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button2"
-            app:layout_constraintVertical_weight="1" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:backgroundTint="@color/skyblue"
-            android:text="Rules of driving"
+            android:text="Advices"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button2"
             app:layout_constraintVertical_weight="1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </LinearLayout>

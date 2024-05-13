@@ -47,9 +47,7 @@ public class Profile extends Activity {
         Button lessonsButton = findViewById(R.id.button2);
         Button roadSignsButton = findViewById(R.id.button3);
         Button rulesButton = findViewById(R.id.button4);
-        Button rulesQuiz = findViewById(R.id.button5);
         ImageButton settings = findViewById(R.id.settings);
-        tabLayout = findViewById(R.id.tab_layout);
         profileImageView = findViewById(R.id.blank_profile);
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
@@ -62,14 +60,7 @@ public class Profile extends Activity {
                 startActivity(intent);
             }
         });
-        rulesQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Profile.this, RulesQuizActivity.class);
-                startActivity(intent);
-            }
-        });
-        roadSignsButton.setOnClickListener(new View.OnClickListener() {
+               roadSignsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Profile.this, RoadSignsActivity.class);

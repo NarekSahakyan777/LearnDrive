@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context=".LessonsTraficSights">
+    tools:context=".next23trs">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,66 +38,68 @@
         <!-- Add your ImageViews here -->
 
         <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="116dp"
-            android:layout_height="107dp"
-            android:layout_marginStart="44dp"
+            android:id="@+id/imageView11"
+            android:layout_width="112dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="36dp"
 
-            android:layout_marginTop="92dp"
-            android:src="@drawable/trsg1"
+            android:layout_marginTop="68dp"
+            android:src="@drawable/trs36"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="117dp"
-            android:layout_height="98dp"
-            android:layout_marginStart="44dp"
+            android:id="@+id/imageView12"
+            android:layout_width="109dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="36dp"
 
-            android:layout_marginTop="212dp"
-            android:src="@drawable/trs2"
+            android:layout_marginTop="184dp"
+            android:src="@drawable/trs37"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView13"
             android:layout_width="117dp"
             android:layout_height="98dp"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="36dp"
 
-            android:layout_marginTop="320dp"
-            android:src="@drawable/trs3"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/trs38"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageView14"
             android:layout_width="117dp"
             android:layout_height="98dp"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="36dp"
 
-            android:layout_marginTop="432dp"
-            android:src="@drawable/trs4"
+            android:layout_marginTop="408dp"
+            android:src="@drawable/trs39"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView15"
             android:layout_width="117dp"
             android:layout_height="98dp"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="36dp"
 
-            android:layout_marginTop="540dp"
-            android:src="@drawable/trs5"
+            android:layout_marginTop="520dp"
+            android:src="@drawable/trs30"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="120dp"
+        android:paddingLeft="55dp"
         android:paddingTop="29dp"
-        android:text="Warning signs"
+        android:text="Advantages and Forbidding signs"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="31dp">
@@ -116,8 +118,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="124dp"
-            android:text="Intersection with roundabout"
+            android:layout_marginTop="96dp"
+            android:text="End of Main road"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -125,8 +127,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="240dp"
-            android:text="Lighting setup"
+            android:layout_marginTop="208dp"
+            android:text="Give way"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -134,8 +136,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="360dp"
-            android:text="Steep descent"
+            android:layout_marginTop="336dp"
+            android:text="Traffic is prohibited"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -143,8 +145,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="476dp"
-            android:text="Two way traffic"
+            android:layout_marginTop="428dp"
+            android:text="Right turns are prohibited"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -152,14 +154,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="576dp"
-            android:text="Pedestrian crossing"
+            android:layout_marginTop="544dp"
+            android:text="Left turns are prohibited"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/nexTo"
+            android:id="@+id/nexTo2"
             android:layout_width="112dp"
             android:layout_height="57dp"
             android:layout_marginTop="636dp"

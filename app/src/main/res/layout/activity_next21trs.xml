@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context=".LessonsTraficSights">
+    tools:context=".next21trs">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,57 +38,57 @@
         <!-- Add your ImageViews here -->
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/imageView6"
             android:layout_width="116dp"
             android:layout_height="107dp"
             android:layout_marginStart="44dp"
 
             android:layout_marginTop="92dp"
-            android:src="@drawable/trsg1"
+            android:src="@drawable/trs26"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageView7"
             android:layout_width="117dp"
             android:layout_height="98dp"
             android:layout_marginStart="44dp"
 
             android:layout_marginTop="212dp"
-            android:src="@drawable/trs2"
+            android:src="@drawable/trs27"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView8"
             android:layout_width="117dp"
             android:layout_height="98dp"
             android:layout_marginStart="44dp"
 
             android:layout_marginTop="320dp"
-            android:src="@drawable/trs3"
+            android:src="@drawable/trs28"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageView9"
             android:layout_width="117dp"
             android:layout_height="98dp"
             android:layout_marginStart="44dp"
 
             android:layout_marginTop="432dp"
-            android:src="@drawable/trs4"
+            android:src="@drawable/trs29"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/imageView10"
             android:layout_width="117dp"
             android:layout_height="98dp"
             android:layout_marginStart="44dp"
 
             android:layout_marginTop="540dp"
-            android:src="@drawable/trs5"
+            android:src="@drawable/trs291"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -117,7 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="124dp"
-            android:text="Intersection with roundabout"
+            android:text="Dangerous turns"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -126,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="240dp"
-            android:text="Lighting setup"
+            android:text="Slippery road"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -135,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="360dp"
-            android:text="Steep descent"
+            android:text="Narrowing road"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -144,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="476dp"
-            android:text="Two way traffic"
+            android:text="Road works"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -153,7 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="576dp"
-            android:text="Pedestrian crossing"
+            android:text="Rock fall"
             android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

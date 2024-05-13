@@ -1,114 +1,206 @@
 package com.example.webdrive;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RoadSignsActivity extends AppCompatActivity {
-    String[] question_list = {"Driving license is granted",
-            "How much will you be fined for driving without a license?",
-            "The number of vehicles on the roads of the Republic of Armenia is defined",
-            "Can you drive when drink?",
-            "Can driver disboy a red light?"};
-    String[] choose_list = {"18 years old", "20 years old", "16 years old", "17 years old ",
-            "30000", "40000", "25000", "20000",
-            "left-hand traffic", "right-hand traffic", "Two of them", "Non of them",
-            "Yes", "Never", "if you want", "All of them",
-            "Yes" ,"Sometimes","Never","If driver want"
+public class RoadSignsActivity extends AppCompatActivity implements View.OnClickListener {
+    public static String[] question = {
+            "Which car is more expensive? "
     };
-    String[] correct_list = {"18 years old", "20000", "right-hand traffic", "Never","Never"};
-    int[] image_list = {R.drawable.trs2, R.drawable.trs21, R.drawable.trs22, R.drawable.trs23, R.drawable.trs25};
-    TextView cpt_question, text_question;
-    Button btn_choose1, btn_choose2, btn_choose3, btn_choose4, btn_next;
-    int currentQuestion = 0;
-    boolean isclickBtn = false;
-    int correctCount = 0;
+    public static String[][] choices = {
+            {"Pedestrian crossing", "Two way traffic", "Intersection with roundabout", "Main road"},
+            {"Steep descent", "Two way traffic", "Maximum speed limit", "Lighting setup"},
+            {"Intersection with roundabout", "Main road", "Steep descent", "Two way traffic"},
+            {"End of settlement", "Two way traffic", "Pedestrian crossing", "Maximum speed limit"},
+            {"Distance to object", "Non of them", "Main road", "Start of settlement"},
+            {"Non of them", "Roundabout traffic", "Intersection with roundabout", "Maximum speed limit"},
+            {"Main road", "Steep descent", "Distance to object", "Traffic is direct"},
+            {"Distance to object", "Non of them", "Stopping is prohibited", "Residence beginning"},
+            {"Hospital", "Residence beginning", "Traffic is direct", "Distance to object"},
+            {"End of settlement", "Place of return", "Non of them", "Parking"}
+    };
+    public static String[] correctAnswers = {
+            "Pedestrian crossing",
+            "Lighting setup",
+            "Steep descent",
+            "Two way traffic",
+            "Main road",
+            "Roundabout traffic",
+            "Distance to object",
+            "Stopping is prohibited",
+            "Residence beginning",
+            "Non of them",
+    };public static int[] questionImages = {
+            R.drawable.trs5,
+            R.drawable.trs2,
+            R.drawable.trs3,
+            R.drawable.trs4,
+            R.drawable.trs21,
+            R.drawable.trs32,
+            R.drawable.trs44,
+            R.drawable.trs25,
+            R.drawable.trs34,
+            R.drawable.trs43,
 
-    int incorrectCount = 0;
-    String valueChoose = "";
-    Button btn_click;
-    ImageView questionImage;
+    };
+    TextView questionTextView;
+    Button ansA, ansB, ansC, ansD;
+    Button submitBtn;
+    int score = 0;
+    int totalQuestion = question.length;
+    int currentQuestionIndex = 0;
+    String selectedAnswer = "";
+    public TextView questionCountTextView;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_road_signs);
-        text_question = findViewById(R.id.text_question);
-        cpt_question = findViewById(R.id.cpt_question);
-        btn_choose1 = findViewById(R.id.btn_choose1);
-        btn_choose2 = findViewById(R.id.btn_choose2);
-        btn_choose3 = findViewById(R.id.btn_choose3);
-        btn_choose4 = findViewById(R.id.btn_choose4);
-        btn_next = findViewById(R.id.btn_next);
-        questionImage = findViewById(R.id.question_image);
+
+
+        ansA = findViewById(R.id.ans_A);
+        ansB = findViewById(R.id.ans_B);
+        ansC = findViewById(R.id.ans_C);
+        ansD = findViewById(R.id.ans_D);
+        submitBtn = findViewById(R.id.submit);
+        ansA.setOnClickListener(this);
+        ansB.setOnClickListener(this);
+        ansC.setOnClickListener(this);
+        ansD.setOnClickListener(this);
+        submitBtn.setOnClickListener(this);
+        questionCountTextView = findViewById(R.id.cpt_question);
+
+        loadNewQuestion();
         findViewById(R.id.image_back).setOnClickListener(
                 a-> finish()
         );
-        remplirData();
-        btn_next.setOnClickListener(v -> {
-            if (isclickBtn) {
-                isclickBtn = false;
-                if (!valueChoose.equals(correct_list[currentQuestion])) {
-                    Toast.makeText(RoadSignsActivity.this, "error", Toast.LENGTH_SHORT).show();
-                    btn_click.setBackgroundResource(R.drawable.background_btn_error);
-                    incorrectCount++;
-                } else {
-                    Toast.makeText(RoadSignsActivity.this, "correct", Toast.LENGTH_SHORT).show();
-                    btn_click.setBackgroundResource(R.drawable.background_btn_correct);
-                    correctCount++;
+    }
+
+    @Override
+    public void onClick(View view) {
+        ansA.setBackgroundColor(Color.WHITE);
+        ansB.setBackgroundColor(Color.WHITE);
+        ansC.setBackgroundColor(Color.WHITE);
+        ansD.setBackgroundColor(Color.WHITE);
+        Button clickedButton = (Button) view;
+        if (clickedButton.getId() == R.id.submit) {
+            if (selectedAnswer.equals(correctAnswers[currentQuestionIndex])) {
+                score++;
+                if (selectedAnswer.equals(choices[currentQuestionIndex][0])) {
+                    ansA.setBackgroundColor(Color.GREEN);
                 }
-                new Handler().postDelayed(() -> {
-                    if (currentQuestion != question_list.length - 1) {
-                        currentQuestion = currentQuestion + 1;
-                        remplirData();
-                        valueChoose = "";
-                        btn_choose1.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                        btn_choose2.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                        btn_choose3.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                        btn_choose4.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-                    } else {
-                        Intent intent = new Intent(RoadSignsActivity.this, ResultActivity.class);
-                        intent.putExtra("Result", correctCount);
-                        startActivity(intent);
+                if (selectedAnswer.equals(choices[currentQuestionIndex][1])) {
+                    ansB.setBackgroundColor(Color.GREEN);
+                }
+                if (selectedAnswer.equals(choices[currentQuestionIndex][2])) {
+                    ansC.setBackgroundColor(Color.GREEN);
+                }
+                if (selectedAnswer.equals(choices[currentQuestionIndex][3])) {
+                    ansD.setBackgroundColor(Color.GREEN);
+                }
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        currentQuestionIndex++;
+                        loadNewQuestion();
                     }
-                }, 2000);
+                }, 1000);
             } else {
-                Toast.makeText(RoadSignsActivity.this, "You have to choose one", Toast.LENGTH_LONG).show();
+                if (selectedAnswer.equals(choices[currentQuestionIndex][0])) {
+                    ansA.setBackgroundColor(Color.RED);
+                }
+                if (selectedAnswer.equals(choices[currentQuestionIndex][1])) {
+                    ansB.setBackgroundColor(Color.RED);
+                }
+                if (selectedAnswer.equals(choices[currentQuestionIndex][2])) {
+                    ansC.setBackgroundColor(Color.RED);
+                }
+                if (selectedAnswer.equals(choices[currentQuestionIndex][3])) {
+                    ansD.setBackgroundColor(Color.RED);
+                }
+
+                if (correctAnswers[currentQuestionIndex].equals(choices[currentQuestionIndex][0])) {
+                    ansA.setBackgroundColor(Color.GREEN);
+                }
+                if (correctAnswers[currentQuestionIndex].equals(choices[currentQuestionIndex][1])) {
+                    ansB.setBackgroundColor(Color.GREEN);
+                }
+                if (correctAnswers[currentQuestionIndex].equals(choices[currentQuestionIndex][2])) {
+                    ansC.setBackgroundColor(Color.GREEN);
+                }
+                if (correctAnswers[currentQuestionIndex].equals(choices[currentQuestionIndex][3])) {
+                    ansD.setBackgroundColor(Color.GREEN);
+                }
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        currentQuestionIndex++;
+                        loadNewQuestion();
+                    }
+                }, 1000);
             }
-        });
-    }
-
-
-    void remplirData() {
-        cpt_question.setText((currentQuestion + 1) + "/" + question_list.length);
-        text_question.setText(question_list[currentQuestion]);
-        questionImage.setImageResource(image_list[currentQuestion]);
-        btn_choose1.setText(choose_list[4 * currentQuestion]);
-        btn_choose2.setText(choose_list[4 * currentQuestion + 1]);
-        btn_choose3.setText(choose_list[4 * currentQuestion + 2]);
-        btn_choose4.setText(choose_list[4 * currentQuestion + 3]);
-    }
-
-    public void ClickChoose(View view) {
-        btn_click = (Button) view;
-        if (isclickBtn) {
-            btn_choose1.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-            btn_choose2.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-            btn_choose3.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
-            btn_choose4.setBackgroundResource(R.drawable.background_btn_choose_diasbaled);
+        } else {
+            selectedAnswer = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.BLUE);
         }
-        choiseBtn();
+    }
+
+    void loadNewQuestion() {
+        ansA.setBackgroundColor(Color.WHITE);
+        ansB.setBackgroundColor(Color.WHITE);
+        ansC.setBackgroundColor(Color.WHITE);
+        ansD.setBackgroundColor(Color.WHITE);
+        if (currentQuestionIndex == 10) {
+            finishQuiz();
+            return;
+        }
+        ImageView questionImageView = findViewById(R.id.question_image);
+        questionImageView.setImageResource(questionImages[currentQuestionIndex]);
+        ansA.setText(choices[currentQuestionIndex][0]);
+        ansB.setText(choices[currentQuestionIndex][1]);
+        ansC.setText(choices[currentQuestionIndex][2]);
+        ansD.setText(choices[currentQuestionIndex][3]);
+
+        int currentQuestionNumber = currentQuestionIndex + 1;
+        String questionCountText = currentQuestionNumber + "/" + correctAnswers.length;
+        questionCountTextView.setText(questionCountText);
+    }
+
+    void finishQuiz() {
+        String passStatus = "";
+        if (score > totalQuestion * 0.60) {
+            passStatus = "Passed";
+        } else {
+            passStatus = "Failed";
+        }
+        new AlertDialog.Builder(this)
+                .setTitle(passStatus).setMessage("Score is " + score + " out of " + 10)
+                .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
+                .setCancelable(false)
+                .show();
 
     }
-    void choiseBtn(){
-        btn_click.setBackgroundResource(R.drawable.background_btn_choose_color);
-        isclickBtn = true;
-        valueChoose = btn_click.getText().toString();
+
+    void restartQuiz() {
+        score = 0;
+        currentQuestionIndex = 0;
+        loadNewQuestion();
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
