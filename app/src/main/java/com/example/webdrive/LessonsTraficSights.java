@@ -43,19 +43,23 @@ public class LessonsTraficSights extends AppCompatActivity {
 
     private void configureImages() {
         mImage1.setOnClickListener(view -> {
-            imageName = "Name:Main Road";
+            imageName = "Name: Intersection with roundabout";
             configureDialogFragment();
         });
         mImage2.setOnClickListener(view -> {
-            imageName = "sadddddfdfd";
+            imageName = "Name: Lighting setup";
             configureDialogFragment();
         });
         mImage3.setOnClickListener(view -> {
-            imageName = "sdasdda";
+            imageName = "Name: Steep descent";
             configureDialogFragment();
         });
         mImage4.setOnClickListener(view -> {
-            imageName = "sdasdda";
+            imageName = "Name: Two way traffic";
+            configureDialogFragment();
+        });
+        mImage5.setOnClickListener(view ->{
+            imageName = "Name: Pedestrian crossing";
             configureDialogFragment();
         });
 

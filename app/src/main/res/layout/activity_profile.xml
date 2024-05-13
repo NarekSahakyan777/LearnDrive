@@ -54,40 +54,108 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/rounded_corner2"
-        android:padding="25dp">
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/skyblue"
-            android:text="Lessons Road signs"
-            app:layout_constraintStart_toStartOf="parent"
+        android:padding="15dp">
+        <FrameLayout
+            android:id="@+id/frameButton1"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/card_bg"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_weight="1" />
+            android:padding="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:foreground="?android:attr/selectableItemBackground"
+            tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Road signs"
-            android:backgroundTint="@color/skyblue"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button2"
-            app:layout_constraintVertical_weight="1"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="169dp"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="Lessons
+Trafic Signs"
+                android:textColor="@android:color/black"
+                android:textSize="23sp" />
+                <ImageView
+                    android:layout_width="67dp"
+                    android:layout_height="57dp"
+                    android:src="@drawable/baseline_menu_book_24"
+                    android:layout_marginLeft="45dp"
+                    android:layout_gravity="bottom"
+                    >
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="@color/skyblue"
-            android:text="Advices"
+                </ImageView>
+        </FrameLayout>
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="170dp"
+            android:id="@+id/frameButton2"
+            android:layout_height="170dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/card_bg"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:foreground="?android:attr/selectableItemBackground">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Advices"
+                android:textColor="@android:color/black"
+                android:textSize="23sp" />
+            <ImageView
+                android:layout_width="67dp"
+                android:layout_height="57dp"
+                android:src="@drawable/baseline_thumb_up_24"
+                android:layout_marginLeft="45dp"
+                android:layout_gravity="bottom"
+                >
+
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameButton3"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/card_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            android:padding="5dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button2"
-            app:layout_constraintVertical_weight="1" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Quiz Road Signs"
+                android:textColor="@android:color/black"
+                android:textSize="23sp" />
+
+            <ImageView
+                android:layout_width="58dp"
+                android:layout_height="53dp"
+                android:src="@drawable/baseline_quiz_24"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="45dp"
+
+                >
+
+            </ImageView>
+
+
+        </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

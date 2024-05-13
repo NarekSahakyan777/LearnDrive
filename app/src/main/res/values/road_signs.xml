@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="names_of_sings">
-        <item>Name:Main Road</item>
-        <item>sadddddfdfd</item>
+        <item>Name: Intersection with roundabout</item>
+        <item>Name: Lighting setup</item>
+        <item>Name: Steep descent</item>
+        <item>Name: Two way traffic</item>
+        <item>Name: Pedestrian crossing</item>
+
     </string-array>
 
     <string-array name="descriptions_of_sings">
-        <item>Description: ....fhgrfhbgrebgfbhgfhyghgngndngidgingnghogfsohgboguhbhbghng.</item>
-        <item>wwdsadasdas</item>
+        <item>Description: Intersection with roundabout</item>
+        <item>Description: Intersection, pedestrian crossing or road section where traffic is controlled by a traffic light;</item>
+        <item>Description: Steep descent</item>
+        <item>Description: The beginning of the oncoming traffic section of the road (carriageway).</item>
+        <item>Description: Part of the road where a pedestrian can cross the road</item>
     </string-array>
 </resources>

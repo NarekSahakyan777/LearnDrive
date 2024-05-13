@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class RulesActivity extends AppCompatActivity {
     private final String[] texts = {
-            "If you want to learn and insure your life to be a good driver, take this lesson and take the quiz.",
+            "These are advces which will help you to be more carefully in the roads.",
             "NEVER DRINK AND DRIVE",
             "ALWAYS WEAR SEAT BELT",
             "MAINTAIN A SAFE DISTANCE",
@@ -25,7 +25,7 @@ public class RulesActivity extends AppCompatActivity {
 
     };
     private final String[] smallTexts = {
-            "Learn Carefully",
+            "Read Carefully",
             "Drinking and driving may look like fun but it is far more dangerous not just to self but for others too. Besides risking the lives of people on the road, co-passengers and self, being caught driving while inebriated can land you in big trouble with authorities.",
             "Don't call yourself a safe driver if you don't wear your seat belt around your chest and waist habitually. Driving a car with a seat belt not only ensures your safety but is also mandatory under the law.",
             "When driving a vehicle with new tires on a dry road surface, you need to allow a vehicle-to-vehicle distance of about 100 m at 100 km/h and 80 m at 80 km/h.",
@@ -61,7 +61,7 @@ public class RulesActivity extends AppCompatActivity {
                             Intent intent = new Intent(RulesActivity.this, Profile.class);
                             startActivity(intent);
                         }
-                    }, 3000);
+                    }, 2000);
                 }
             }
         });

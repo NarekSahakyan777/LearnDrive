@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="5dp"
-                android:text="If you want to learn and insure your life to be a good driver, take this lesson and take the quiz."
+                android:text="These are advces which will help you to be more carefully in the roads."
                 android:textSize="25dp"
                 android:textStyle="bold"/>
             <TextView
@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="25dp"
-                android:text="Learn Carefully"
+                android:text="Read Carefully"
                 android:textSize="23dp"
                 />
             <Button

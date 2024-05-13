@@ -42,7 +42,8 @@ public class RoadSignsActivity extends AppCompatActivity implements View.OnClick
             "Stopping is prohibited",
             "Residence beginning",
             "Non of them",
-    };public static int[] questionImages = {
+    };
+    public static int[] questionImages = {
             R.drawable.trs5,
             R.drawable.trs2,
             R.drawable.trs3,

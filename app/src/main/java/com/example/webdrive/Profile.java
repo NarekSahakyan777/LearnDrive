@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -36,7 +37,6 @@ public class Profile extends Activity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private ImageView profileImageView;
     private Uri imageUri;
-    public TabLayout tabLayout ;
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
     @SuppressLint("MissingInflatedId")
@@ -44,11 +44,11 @@ public class Profile extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Button lessonsButton = findViewById(R.id.button2);
-        Button roadSignsButton = findViewById(R.id.button3);
-        Button rulesButton = findViewById(R.id.button4);
         ImageButton settings = findViewById(R.id.settings);
         profileImageView = findViewById(R.id.blank_profile);
+        FrameLayout lessonsButton = findViewById(R.id.frameButton1);
+        FrameLayout roadSignsButton = findViewById(R.id.frameButton3);
+        FrameLayout rulesButton = findViewById(R.id.frameButton2);
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
         FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
