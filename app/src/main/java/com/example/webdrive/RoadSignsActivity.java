@@ -29,7 +29,17 @@ public class RoadSignsActivity extends AppCompatActivity implements View.OnClick
             {"Main road", "Steep descent", "Distance to object", "Traffic is direct"},
             {"Distance to object", "Non of them", "Stopping is prohibited", "Residence beginning"},
             {"Hospital", "Residence beginning", "Traffic is direct", "Distance to object"},
-            {"End of settlement", "Place of return", "Non of them", "Parking"}
+            {"End of settlement", "Place of return", "Non of them", "Parking"},
+            {"Intersection with secondary road", "Narrowing road", "Non of them", "Give way"},
+            {"Two way traffic", "Entry is denied", "Traffic is prohibited", "Slippery road"},
+            {"Road works", "Residence beginning", "Maximum speed limit", "End of Main road"},
+            {"Give way", "Dangerous turns", "Steep descent", "Non of them"},
+            {"Non of them", "Rock fall", "Road works", "Two way traffic"},
+            {"Hospital", "Give way", "Maximum speed limit", "Main road"},
+            {"Two way traffic", "Traffic is direct", "Place of return", "Dangerous turns"},
+            {"Give way", "Narrowing road", "End of Main road", "Intersection with roundabout"},
+            {"Steep descent", "Place of return", "Left turns are prohibited", "Right turns are prohibited"},
+            {"Stopping is prohibited", "Non of them", "Traffic is prohibited", "Traffic is direct"}
     };
     public static String[] correctAnswers = {
             "Pedestrian crossing",
@@ -42,6 +52,16 @@ public class RoadSignsActivity extends AppCompatActivity implements View.OnClick
             "Stopping is prohibited",
             "Residence beginning",
             "Non of them",
+            "Intersection with secondary road",
+            "Entry is denied",
+            "Maximum speed limit",
+            "Non of them",
+            "Rock fall",
+            "Give way",
+            "Dangerous turns",
+            "Narrowing road",
+            "Right turns are prohibited",
+            "Traffic is prohibited"
     };
     public static int[] questionImages = {
             R.drawable.trs5,
@@ -54,7 +74,16 @@ public class RoadSignsActivity extends AppCompatActivity implements View.OnClick
             R.drawable.trs25,
             R.drawable.trs34,
             R.drawable.trs43,
-
+            R.drawable.trs22,
+            R.drawable.trs23,
+            R.drawable.trs24,
+            R.drawable.trs42,
+            R.drawable.trs291,
+            R.drawable.trs37,
+            R.drawable.trs26,
+            R.drawable.trs28,
+            R.drawable.trs39,
+            R.drawable.trs38
     };
     TextView questionTextView;
     Button ansA, ansB, ansC, ansD;
@@ -163,7 +192,7 @@ public class RoadSignsActivity extends AppCompatActivity implements View.OnClick
         ansB.setBackgroundColor(Color.WHITE);
         ansC.setBackgroundColor(Color.WHITE);
         ansD.setBackgroundColor(Color.WHITE);
-        if (currentQuestionIndex == 10) {
+        if (currentQuestionIndex == correctAnswers.length) {
             finishQuiz();
             return;
         }
@@ -187,7 +216,7 @@ public class RoadSignsActivity extends AppCompatActivity implements View.OnClick
             passStatus = "Failed";
         }
         new AlertDialog.Builder(this)
-                .setTitle(passStatus).setMessage("Score is " + score + " out of " + 10)
+                .setTitle(passStatus).setMessage("Score is " + score + " out of " + correctAnswers.length)
                 .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
                 .setCancelable(false)
                 .show();

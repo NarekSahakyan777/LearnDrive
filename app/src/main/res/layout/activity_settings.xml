@@ -23,24 +23,6 @@
         />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/changeUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:backgroundTint="@android:color/transparent"
-        android:text="Change Username "
-        android:textColor="@color/darker_gray"
-        android:textSize="18sp"
-        android:textStyle="normal"
-        android:gravity="start"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
-
-    <com.google.android.material.button.MaterialButton
         android:id="@+id/changePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changeUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/deleteAccount"
@@ -96,7 +78,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:padding="16dp"
-        android:text="Do to Profile"
+        android:text="Go to Categories"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logout" />
