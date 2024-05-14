@@ -13,7 +13,6 @@ import android.widget.ImageView;
 public class LessonsTraficSights extends AppCompatActivity {
     protected Button nextTo;
     private ImageView mImage1, mImage2, mImage3, mImage4, mImage5;
-
     private String imageName;
 
     @SuppressLint("MissingInflatedId")

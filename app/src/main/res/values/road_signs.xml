@@ -7,13 +7,70 @@
         <item>Name: Two way traffic</item>
         <item>Name: Pedestrian crossing</item>
 
+        <item>Name: Dangerous turns</item>
+        <item>Name: Slippery road</item>
+        <item>Name: Narrowing road</item>
+        <item>Name: Road works</item>
+        <item>Name: Rock fall</item>
+
+        <item>Name: Main road</item>
+        <item>Name: Intersection with secondary road</item>
+        <item>Name: Entry is denied</item>
+        <item>Name: Maximum speed limit</item>
+        <item>Name: Stopping is prohibited</item>
+
+        <item>Name: End of Main road</item>
+        <item>Name: Give way</item>
+        <item>Name: Traffic is prohibited</item>
+        <item>Name: Right turns are prohibited</item>
+        <item>Name: Left turns are prohibited</item>
+
+        <item>Name: Traffic is direct</item>
+        <item>Name: Roundabout traffic</item>
+        <item>Name: Pedestrian crossing</item>
+        <item>Name: Residence beginning</item>
+        <item>Name: End of settlement</item>
+
+        <item>Name: Place of return</item>
+        <item>Name: Parking</item>
+        <item>Name: Hospital</item>
+        <item>Name: Distance to object</item>
     </string-array>
 
     <string-array name="descriptions_of_sings">
-        <item>Description: Intersection with roundabout</item>
-        <item>Description: Intersection, pedestrian crossing or road section where traffic is controlled by a traffic light;</item>
-        <item>Description: Steep descent</item>
+        <item>Description: Intersection with roundabout.</item>
+        <item>Description: Intersection, pedestrian crossing or road section where traffic is controlled by a traffic light.</item>
+        <item>Description: Steep descent.</item>
         <item>Description: The beginning of the oncoming traffic section of the road (carriageway).</item>
-        <item>Description: Part of the road where a pedestrian can cross the road</item>
+        <item>Description: Part of the road where a pedestrian can cross the road.</item>
+
+        <item>Description: Turning to the right or turning to the left on a road section with dangerous turns.</item>
+        <item>Description: Section of the road with the most slippery road surface.</item>
+        <item>Description: Narrowing on both sides, right or left.</item>
+        <item>Description: Part of the road where going some works in the roads.</item>
+        <item>Description: Section of the road where collapses, landslides, falling of stones are possible.</item>
+
+        <item>Description: A road where commuters are given the advantage of crossing unregulated intersections.</item>
+        <item>Description: Intersection with secondary road.</item>
+        <item>Description: The movement of all vehicles is prohibited.</item>
+        <item>Description: It is forbidden to drive at a speed higher than that indicated on the sign (km/h).</item>
+        <item>Description: Stopping and parking of vehicles is prohibited.</item>
+
+        <item>Description: End of Main road.</item>
+        <item>Description: The driver must give way to vehicles traveling on the road crossing the road.</item>
+        <item>Description: The movement of all vehicles is prohibited.</item>
+        <item>Description: Right turns are prohibited.</item>
+        <item>Description: Left turns are prohibited.</item>
+
+        <item>Description: Traffic is direct.</item>
+        <item>Description: Traffic is allowed in the direction indicated by the arrows.</item>
+        <item>Description: The sign is placed to the left of the road, far from the crossing or to the right of the road, near the border of the crossing.</item>
+        <item>Description: The name and beginning of the settlement, where the requirements of the rules defining the traffic order in settlements do not apply on the given road.</item>
+        <item>Description: The end of this settlement.</item>
+
+        <item>Description: Left turns are prohibited.</item>
+        <item>Description: Places for parking.</item>
+        <item>Description: Hospital.</item>
+        <item>Description: Shows the distance from the sign in the direction of travel to the beginning of the dangerous section, the place to introduce the corresponding restriction or the distance to a certain object (place) ahead.</item>
     </string-array>
 </resources>
