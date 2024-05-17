@@ -18,6 +18,12 @@
         android:theme="@style/Theme.WebDrive"
         tools:targetApi="31">
         <activity
+            android:name=".Adapters.CategoryAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Adapters.OptionAdapter"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

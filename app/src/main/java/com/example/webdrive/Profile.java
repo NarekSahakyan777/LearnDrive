@@ -66,7 +66,7 @@ public class Profile extends Activity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // When the settings button is clicked, start the Settings activity
+
                 Intent intent = new Intent(Profile.this, SettingsActivity.class);
                 startActivity(intent);
             }
