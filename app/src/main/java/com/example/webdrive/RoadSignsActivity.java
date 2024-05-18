@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class RoadSignsActivity extends AppCompatActivity implements View.OnClickListener {
     public static String[] question = {
-            "What sign is this? "
+                "What sign is this? "
     };
     public static String[][] choices = {
             {"Pedestrian crossing", "Two way traffic", "Intersection with roundabout", "Main road"},
