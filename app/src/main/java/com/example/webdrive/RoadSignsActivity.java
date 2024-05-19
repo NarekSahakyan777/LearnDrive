@@ -114,7 +114,13 @@ public class RoadSignsActivity extends AppCompatActivity implements View.OnClick
 
         loadNewQuestion();
         findViewById(R.id.image_back).setOnClickListener(
-                a-> finish()
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View a) {
+                       Intent in = new Intent(RoadSignsActivity.this,Profile.class);
+                       startActivity(in);
+                    }
+                }
         );
     }
 

@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.WebDrive" parent="Base.Theme.WebDrive" />
+    <style name="Progressbar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name = "colorSecondary">#3297ca</item>
+    </style>
 </resources>

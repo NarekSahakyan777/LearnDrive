@@ -52,7 +52,7 @@ public class Profile extends Activity {
                roadSignsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Profile.this, RoadSignsActivity.class);
+                Intent intent = new Intent(Profile.this, SplashActivity2.class);
                 startActivity(intent);
             }
         });
