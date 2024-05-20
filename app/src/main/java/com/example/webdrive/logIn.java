@@ -28,7 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class logIn extends AppCompatActivity {
     public EditText loginEmail, loginPassword;
     public TextView forgetPassword;
-    public Button loginButton;
+    public Button loginButton,guestMode;
     private FirebaseAuth auth;
     private TextView lognInRedirectText, forgotPasswordText;
     private CheckBox remember;
@@ -42,11 +42,18 @@ public class logIn extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
+        guestMode = findViewById(R.id.guest_mode);
         lognInRedirectText = findViewById(R.id.logInRedirect);
         forgotPasswordText = findViewById(R.id.forgetpassword);
         SharedPreferences sharedPref = getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
         boolean rememberMe = sharedPref.getBoolean("rememberMe", false);
-
+        guestMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(logIn.this, Profile.class);
+                startActivity(in);
+            }
+        });
         if (rememberMe) {
             String savedEmail = sharedPref.getString("username", "");
             String savedPassword = sharedPref.getString("password", "");
