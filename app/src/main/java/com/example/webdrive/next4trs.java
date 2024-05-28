@@ -26,13 +26,7 @@ public class next4trs extends AppCompatActivity {
         mImage3 = findViewById(R.id.imageView28);
         mImage4 = findViewById(R.id.imageView29);
 
-        goTo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(next4trs.this, RoadSignsActivity.class);
-                startActivity(in);
-            }
-        });
+
         backToCategories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
