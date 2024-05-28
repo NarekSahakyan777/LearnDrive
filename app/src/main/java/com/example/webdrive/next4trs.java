@@ -20,7 +20,6 @@ public class next4trs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next4trs);
         backToCategories = findViewById(R.id.backToCategories);
-        goTo = findViewById(R.id.goToRoadSignsActivity);
         mImage1 = findViewById(R.id.imageView26);
         mImage2 = findViewById(R.id.imageView27);
         mImage3 = findViewById(R.id.imageView28);
